@@ -1,16 +1,52 @@
 import Link from "next/link";
+import classes from "./page.module.css"
+import ImageSlideshow from "./components/main-header/images/image-slideshow";
 
 export default function Home() {
   return (
-    <main>
-      <h1 style={{ color: 'white', textAlign: 'center' }}>
-        Time to get started!
+    <>
+      <header className={classes.header}>
+        <div className={classes.slideshow}>
+          <ImageSlideshow/>
+        </div>
+        <div>
+          <div className={classes.hero}>
+            <h1>Next Level Food for all the next level <strong>Foodies</strong></h1>
+            <p>Taste and share food from all over the world</p>
+          </div>
+          <div className={classes.cta}>
+            <Link href="/community">Join the community</Link>
+            <Link href="/meals">Explore the Meals</Link>
+          </div>
+        </div>
+      </header>
+      <main>
+      <section className={classes.section}>
+          <h2>How it works</h2>
+          <p>
+            NextLevel Food is a platform for foodies to share their favorite
+            recipes with the world. It&apos;s a place to discover new dishes, and to
+            connect with other food lovers.
+          </p>
+          <p>
+            NextLevel Food is a place to discover new dishes, and to connect
+            with other food lovers.
+          </p>
+        </section>
 
-        
-      </h1>
-      <Link href='/meals'>Meals Page</Link>
-      <Link href='/meals/share'>Share Page</Link>
-      <Link href='/community'>Community Page</Link>
-    </main>
+        <section className={classes.section}>
+          <h2>Why NextLevel Food?</h2>
+          <p>
+            NextLevel Food is a platform for foodies to share their favorite
+            recipes with the world. It&apos;s a place to discover new dishes, and to
+            connect with other food lovers.
+          </p>
+          <p>
+            NextLevel Food is a place to discover new dishes, and to connect
+            with other food lovers.
+          </p>
+        </section>
+      </main>
+    </>
   );
 }
